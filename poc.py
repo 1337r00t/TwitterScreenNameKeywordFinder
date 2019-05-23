@@ -20,7 +20,7 @@ def get_screen_name(twarc, screen_name, follower_ids, keyword):
     :param keyword:
     :return:
     """
-    with open(screen_name + '_' + keyword + '.txt', 'a') as f:
+    with open(screen_name + '_' + keyword + '.txt', 'a', encoding="utf-8") as f:
         for counter, user in enumerate(twarc.user_lookup(ids=follower_ids), 1):
             name = user["name"]
             if keyword in name:
